@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mind Logic</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 class="title">Mind Logic</h1>
+
+<div class="character">
+<div class="avatar"></div>
+<p id="characterText">Hello! I'm Logic Bot.</p>
+</div>
+
+<!-- START SCREEN -->
+<div class="screen" id="startScreen">
+
+<h2>Enter Your Name</h2>
+
+<input type="text" id="playerName" placeholder="Your name">
+
+<button onclick="startGame()">Start Game</button>
+
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="screen hidden" id="instructionScreen">
+
+<h2>Instructions</h2>
+
+<p>Solve probability and logic puzzles.</p>
+<p>Answer correctly to earn points.</p>
+
+<button onclick="startLevel1()">Start Level 1</button>
+
+</div>
+
+<!-- LEVEL 1 -->
+<div class="screen hidden" id="level1">
+
+<h2>Mystery Bag</h2>
+
+<p>A bag contains colored balls:</p>
+
+<div id="bag"></div>
+
+<button onclick="drawBalls()">Draw Balls</button>
+
+<p id="drawResult"></p>
+
+<p class="question">What is the probability that both balls are red?</p>
+
+<div class="choices">
+
+<button onclick="checkAnswer('1/3')">1/3</button>
+<button onclick="checkAnswer('2/9')">2/9</button>
+<button onclick="checkAnswer('5/18')">5/18</button>
+<button onclick="checkAnswer('4/15')">4/15</button>
+
+</div>
+
+</div>
+
+<!-- LEVEL 2 -->
+<div class="screen hidden" id="level2">
+
+<h2>Who is the Doctor?</h2>
+
+<p>Assign the correct profession.</p>
+
+<div class="logicBox">
+
+<label>Ana</label>
+<select id="ana">
+<option>Doctor</option>
+<option>Teacher</option>
+<option>Engineer</option>
+</select>
+
+<label>Ben</label>
+<select id="ben">
+<option>Doctor</option>
+<option>Teacher</option>
+<option>Engineer</option>
+</select>
+
+<label>Cara</label>
+<select id="cara">
+<option>Doctor</option>
+<option>Teacher</option>
+<option>Engineer</option>
+</select>
+
+</div>
+
+<button onclick="checkLogic()">Submit</button>
+
+</div>
+
+<!-- END SCREEN -->
+<div class="screen hidden" id="endScreen">
+
+<h2 id="resultText"></h2>
+
+<h3>Leaderboard</h3>
+
+<ul id="leaderboard"></ul>
+
+<button onclick="location.reload()">Play Again</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
